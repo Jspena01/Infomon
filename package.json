@@ -1,0 +1,22 @@
+{
+  "name": "infomon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "less": "less-watch-compiler less css index.less"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jspena01/Infomon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jspena01/Infomon/issues"
+  },
+  "homepage": "https://github.com/Jspena01/Infomon#readme",
+  "dependencies": {
+    "less-watch-compiler": "^1.16.3"
+  }
+}

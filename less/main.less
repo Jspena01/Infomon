@@ -1,0 +1,120 @@
+.main {
+  #wrapper {
+    height: @mainHeight;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    padding: 2vh 2vw;
+    justify-content: center;
+    .pokemon {
+      height: max-content;
+      min-width: 250px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      .pokemon__image {
+        width: 100%;
+        border: 2px solid @pokemonBorderColor;
+        background-color: #eee;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+      .pokemon__info {
+        border: 2px solid @pokemonBorderColor;
+        border-top: 0px solid @pokemonBorderColor;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        background-color: #ff4343;
+        color: #fff;
+        .pokemon__title {
+          align-self: center;
+          text-transform: capitalize;
+        }
+        .pokemon__details {
+          list-style: none;
+          margin-left: 5%;
+          display: flex;
+          flex-direction: column;
+          .value{
+          font-weight: bolder;
+          }
+        }
+        .pokemon__types {
+          margin: 10px 0px;
+          list-style: none;
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+          text-transform: capitalize;
+          font-weight: bolder;
+        }
+        .types {
+          border: 1px solid #000;
+          border-radius: 25px;
+          padding: 2px 10px;
+          width: max-content;
+          background-color: #fff;
+          color: #000;
+          cursor: pointer;
+        }
+
+        .grass {
+          .types(@grass);
+        }
+        .fire {
+          .types(@fire);
+        }
+        .water {
+          .types(@water);
+        }
+        .poison {
+          .types(@poison);
+        }
+        .flying {
+          .types(@flying);
+        }
+        .bug {
+          .types(@bug);
+        }
+        .normal {
+          .types(@normal);
+        }
+      }
+    }
+  }
+  .pages {
+    order: 99;
+    display: flex;
+    width: 100%;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    li {
+      margin-right: 20px;
+      cursor: pointer;
+      font-size: 1.5em;
+      &:hover {
+        color: #0000ff;
+        font-weight: bolder;
+      }
+    }
+    #current {
+      color: #0000ff;
+      font-weight: bolder;
+    }
+    .btn__move {
+      height: min-content;
+      padding: 0 5px;
+      border-radius: 5px;
+      font-size: 1.3em;
+    }
+  }
+}
