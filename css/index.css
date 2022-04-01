@@ -84,7 +84,7 @@
 .item__link:active {
   color: #f0dfdf;
 }
-.main #wrapper {
+.main .wrapper {
   height: 88vh;
   width: 100%;
   display: flex;
@@ -93,7 +93,7 @@
   padding: 2vh 2vw;
   justify-content: center;
 }
-.main #wrapper .pokemon {
+.main .wrapper .pokemon {
   height: max-content;
   min-width: 250px;
   width: 250px;
@@ -102,14 +102,14 @@
   align-items: center;
   margin: 10px;
 }
-.main #wrapper .pokemon .pokemon__image {
+.main .wrapper .pokemon .pokemon__image {
   width: 100%;
   border: 2px solid #4d2a2a;
   background-color: #eee;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
-.main #wrapper .pokemon .pokemon__info {
+.main .wrapper .pokemon .pokemon__info {
   border: 2px solid #4d2a2a;
   border-top: 0px solid #4d2a2a;
   border-bottom-left-radius: 25px;
@@ -121,20 +121,20 @@
   background-color: #ff4343;
   color: #fff;
 }
-.main #wrapper .pokemon .pokemon__info .pokemon__title {
+.main .wrapper .pokemon .pokemon__info .pokemon__title {
   align-self: center;
   text-transform: capitalize;
 }
-.main #wrapper .pokemon .pokemon__info .pokemon__details {
+.main .wrapper .pokemon .pokemon__info .pokemon__details {
   list-style: none;
   margin-left: 5%;
   display: flex;
   flex-direction: column;
 }
-.main #wrapper .pokemon .pokemon__info .pokemon__details .value {
+.main .wrapper .pokemon .pokemon__info .pokemon__details .value {
   font-weight: bolder;
 }
-.main #wrapper .pokemon .pokemon__info .pokemon__types {
+.main .wrapper .pokemon .pokemon__info .pokemon__types {
   margin: 10px 0px;
   list-style: none;
   display: flex;
@@ -143,7 +143,7 @@
   text-transform: capitalize;
   font-weight: bolder;
 }
-.main #wrapper .pokemon .pokemon__info .types {
+.main .wrapper .pokemon .pokemon__info .types {
   border: 1px solid #000;
   border-radius: 25px;
   padding: 2px 10px;
@@ -152,31 +152,31 @@
   color: #000;
   cursor: pointer;
 }
-.main #wrapper .pokemon .pokemon__info .grass {
+.main .wrapper .pokemon .pokemon__info .grass {
   background-color: #54f638;
   border-color: #54f638;
 }
-.main #wrapper .pokemon .pokemon__info .fire {
+.main .wrapper .pokemon .pokemon__info .fire {
   background-color: #f36828;
   border-color: #f36828;
 }
-.main #wrapper .pokemon .pokemon__info .water {
+.main .wrapper .pokemon .pokemon__info .water {
   background-color: #406bf8;
   border-color: #406bf8;
 }
-.main #wrapper .pokemon .pokemon__info .poison {
+.main .wrapper .pokemon .pokemon__info .poison {
   background-color: #8d3a7f;
   border-color: #8d3a7f;
 }
-.main #wrapper .pokemon .pokemon__info .flying {
+.main .wrapper .pokemon .pokemon__info .flying {
   background-color: #c3d0fa;
   border-color: #c3d0fa;
 }
-.main #wrapper .pokemon .pokemon__info .bug {
+.main .wrapper .pokemon .pokemon__info .bug {
   background-color: #a4ec51;
   border-color: #a4ec51;
 }
-.main #wrapper .pokemon .pokemon__info .normal {
+.main .wrapper .pokemon .pokemon__info .normal {
   background-color: #ffffff;
   border-color: #ffffff;
 }
@@ -189,6 +189,12 @@
   justify-content: center;
   margin-top: 5px;
 }
+.main .pages .page__prev {
+  order: 0;
+}
+.main .pages .page__next {
+  order: 10;
+}
 .main .pages li {
   margin-right: 20px;
   cursor: pointer;
@@ -198,7 +204,7 @@
   color: #0000ff;
   font-weight: bolder;
 }
-.main .pages #current {
+.main .pages .current {
   color: #0000ff;
   font-weight: bolder;
 }

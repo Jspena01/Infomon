@@ -1,5 +1,5 @@
 .main {
-  #wrapper {
+  .wrapper {
     height: @mainHeight;
     width: 100%;
     display: flex;
@@ -89,6 +89,7 @@
       }
     }
   }
+
   .pages {
     order: 99;
     display: flex;
@@ -97,6 +98,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 5px;
+    .page__prev{
+      order: 0;
+    }
+    .page__next{
+      order: 10;
+    }
     li {
       margin-right: 20px;
       cursor: pointer;
@@ -106,7 +113,7 @@
         font-weight: bolder;
       }
     }
-    #current {
+    .current {
       color: #0000ff;
       font-weight: bolder;
     }
