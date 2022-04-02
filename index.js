@@ -3,15 +3,25 @@ const pokemonsWrapper = document.querySelector(".wrapper");
 let pokemonCount = 0;
 let maxPokemons = 24;
 let currentPage = 1;
+let lastPageDisplayed = 1;
+let loading = false;
 function paginationBar() {
   pokemonsWrapper.innerHTML += `                              
         <ul class="pages">
-          <li class="page__prev btn__move" id="prev"><</li>
+          <li class="page__prev btn__move" id="prev">Previous</li>
           <li class="page__number" id="1">1</li>
           <li class="page__number" id="2">2</li>
-          <li class="page__next btn__move" id="next">></li>
+          <li class="page__number" id="3">3</li>
+          <li class="page__next btn__move" id="next">Next</li>
         </ul>
           `;
+  for (let i = 4; i <= lastPageDisplayed; ++i) {
+    let newPage = document.createElement("li");
+    newPage.className = "page__number";
+    newPage.id = i;
+    newPage.innerText = i;
+    document.querySelector(".pages").appendChild(newPage);
+  }
 
   const pagePrev = document.querySelector(".page__prev");
   const pageNext = document.querySelector(".page__next");
@@ -20,7 +30,7 @@ function paginationBar() {
     if (currentPage > 1) {
       pokemonsWrapper.innerHTML = "";
       --currentPage;
-      pokemonCount = 18 * currentPage - 18;
+      pokemonCount = 24 * currentPage - 24;
       getPokemon(++pokemonCount);
     }
   });
@@ -29,11 +39,28 @@ function paginationBar() {
     ++currentPage;
     getPokemon(++pokemonCount);
   });
+  document.addEventListener("keydown", (e) => {
+    if (e.key == "ArrowRight" && !loading) {
+      loading = true;
+      console.log("in");
+      pokemonsWrapper.innerHTML = "";
+      ++currentPage;
+      getPokemon(++pokemonCount);
+    } else if (e.key == "ArrowLeft" && !loading) {
+      if (currentPage > 1) {
+        loading = true;
+        pokemonsWrapper.innerHTML = "";
+        --currentPage;
+        pokemonCount = 24 * currentPage - 24;
+        getPokemon(++pokemonCount);
+      }
+    }
+  });
   for (let pageN of pageNumber) {
     pageN.addEventListener("click", function () {
       pokemonsWrapper.innerHTML = "";
       currentPage = Number(pageN.innerText);
-      pokemonCount = 18 * currentPage - 18;
+      pokemonCount = maxPokemons * currentPage - 24;
       getPokemon(++pokemonCount);
     });
   }
@@ -49,7 +76,7 @@ function showPokemon(res, id) {
   createPokemon.innerHTML = `
     <img src="${url}" alt="" class="pokemon__image"/>
         <div class="pokemon__info">
-            <h2 class="pokemon__title">${name}</h2>
+            <h2 class="pokemon__title"><i class="fa-solid fa-star star"></i>${name}</h2>
             <ul class="pokemon__details">
                 <li class="details__stats">HP: <span class="value">${hp.base_stat}</span></li>
                 <li class="details__stats">Attack: <span class="value">${att.base_stat}</span></li>
@@ -80,17 +107,11 @@ function getPokemon(id, index = 0) {
       if (pokemonCount < currentPage * maxPokemons) {
         getPokemon(++pokemonCount, ++index);
       } else {
+        lastPageDisplayed =
+          lastPageDisplayed <= currentPage ? currentPage : lastPageDisplayed;
         paginationBar();
-        if (!document.getElementById(`${currentPage}`)) {
-          for (let i = 3; i <= currentPage; i++) {
-            let newPage = document.createElement("li");
-            newPage.className = "page__number";
-            newPage.id = i;
-            newPage.innerText = i;
-            document.querySelector(".pages").appendChild(newPage);
-          }
-        }
         document.getElementById(`${currentPage}`).classList.add("current");
+        loading = false;
       }
     }
   };

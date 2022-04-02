@@ -1,12 +1,17 @@
 .main {
+  width: 100vw;
+  height: @mainHeight;
   .wrapper {
-    height: @mainHeight;
+    height: 100%;
     width: 100%;
     display: flex;
     overflow-x: hidden;
     flex-wrap: wrap;
     padding: 2vh 2vw;
     justify-content: center;
+    .unselected{
+      
+    }
     .pokemon {
       height: max-content;
       min-width: 250px;
@@ -34,8 +39,26 @@
         background-color: #ff4343;
         color: #fff;
         .pokemon__title {
-          align-self: center;
+          display: flex;
           text-transform: capitalize;
+          justify-content: center;
+          padding: 5px;
+          align-items: center;
+          .star{
+            margin-right: 15px;
+            font-size: .8em;
+            -webkit-text-stroke: 2px #000;
+            &:hover{
+            -webkit-text-stroke: 2px #fffb01;
+            color: #fffb01;
+            cursor: pointer;
+            }
+            &:active{
+              -webkit-text-stroke: 2px #000;
+              color: #fff;
+              cursor: pointer;
+              }
+          }
         }
         .pokemon__details {
           list-style: none;
@@ -70,12 +93,15 @@
         }
         .fire {
           .types(@fire);
+          color: #fff;
         }
         .water {
           .types(@water);
+          color: #fff
         }
         .poison {
           .types(@poison);
+          color: #fff;
         }
         .flying {
           .types(@flying);
@@ -85,6 +111,47 @@
         }
         .normal {
           .types(@normal);
+        }
+        .rock{
+          .types(@rock);
+          color: #fff;
+        }
+        .ground{
+          .types(@ground);
+          color: #fff;
+        }
+        .electric{
+          .types(@electric);
+        }
+        .fairy{
+          .types(@fairy);
+          color: #fff;
+        }
+        .fighting{
+          .types(@fighting);
+          color: #fff;
+        }
+        .psychic{
+          .types(@psychic);
+          color: #fff;
+        }
+        .ice{
+          .types(@ice);
+          color: #fff;
+        }
+        .steel{
+          .types(@steel);
+        }
+        .ghost{
+          .types(@ghost);
+        }
+        .dragon{
+          .types(@dragon);
+          color: #fff;
+        }
+        .dark{
+          .types(@dark);
+          color: #fff;
         }
       }
     }
@@ -116,6 +183,7 @@
     .current {
       color: #0000ff;
       font-weight: bolder;
+      cursor:default;
     }
     .btn__move {
       height: min-content;
