@@ -1,6 +1,7 @@
 .main {
   width: 100vw;
   height: @mainHeight;
+  background-color: #222;
   .wrapper {
     height: 100%;
     width: 100%;
@@ -49,14 +50,29 @@
             font-size: .8em;
             -webkit-text-stroke: 2px #000;
             &:hover{
-            -webkit-text-stroke: 2px #fffb01;
+            -webkit-text-stroke: 2px #000;
             color: #fffb01;
             cursor: pointer;
             }
             &:active{
               -webkit-text-stroke: 2px #000;
-              color: #fff;
-              cursor: pointer;
+              color: #b6b30d;
+              cursor: pointer;  
+              }
+          }
+          .favorite{
+            -webkit-text-stroke: 2px #000;
+            color: #fffb01;
+            cursor: pointer;
+            &:hover{
+              -webkit-text-stroke: 2px #000;
+              color: #b6b30d;
+              cursor: pointer;  
+            }
+            &:active{
+              -webkit-text-stroke: 2px #000;
+              color: #fffffe;
+              cursor: pointer;  
               }
           }
         }
@@ -165,6 +181,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 5px;
+    font-weight: bolder;
+    color: #fff;
     .page__prev{
       order: 0;
     }
@@ -176,12 +194,12 @@
       cursor: pointer;
       font-size: 1.5em;
       &:hover {
-        color: #0000ff;
+        color: #2bff00;
         font-weight: bolder;
       }
     }
     .current {
-      color: #0000ff;
+      color: #2bff00;
       font-weight: bolder;
       cursor:default;
     }
