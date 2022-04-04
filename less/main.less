@@ -10,9 +10,7 @@
     flex-wrap: wrap;
     padding: 2vh 2vw;
     justify-content: center;
-    .unselected{
-      
-    }
+    align-items: center;
     .pokemon {
       height: max-content;
       min-width: 250px;
@@ -23,8 +21,9 @@
       margin: 10px;
       .pokemon__image {
         width: 100%;
+        height: 246px;
         border: 2px solid @pokemonBorderColor;
-        background-color: #eee;
+        background-color: #faffca;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
       }
@@ -194,12 +193,12 @@
       cursor: pointer;
       font-size: 1.5em;
       &:hover {
-        color: #2bff00;
+        color: #ff4343;
         font-weight: bolder;
       }
     }
     .current {
-      color: #2bff00;
+      color: #ff4343;
       font-weight: bolder;
       cursor:default;
     }

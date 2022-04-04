@@ -22,15 +22,13 @@
         <img src="./src/images/Pokeball.png" class="header__logo" />
         <h2 class="header__title">INFOMON</h2>
       </a>
-      <input
-        type="text"
-        id="inputSearch"
-        placeholder="Insertar el nombre del pokemon"
-        class="header__input"
-      />
+      <div class="header__search">
+        <input type="text" class="search__input" id="inputSearch" placeholder="Insertar el nombre del pokemon"/>
+        <i class="fa-solid fa-magnifying-glass search__button"></i>
+      </div>
       <nav class="nav">
         <ul class="menu">
-          <a href="" class="item__link"><li class="menu__item">Home</li></a>
+          <a href="#" class="item__link" id="home"><li class="menu__item">Home</li></a>
           <a href="#" class="item__link" id="favorite"
             ><li class="menu__item">Favorites</li></a
           >
@@ -44,6 +42,6 @@
     <footer class="footer">
       <h2>Created by: José Peña</h2>
     </footer>
-    <script src="./index.js"></script>
+    <script src="./dist/bundle.js"></script>
   </body>
 </html>
